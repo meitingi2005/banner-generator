@@ -1,0 +1,126 @@
+<!--<Spring.jpg = !--https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwjqwd6O-rfLAhXFOz4KHVXfDncQjRwIBw&url=http%3A%2F%2Frose-galaxy.com%2Fdesktop-wallpaper-2%2Fspring-season-wallpaper-4544%2F&psig=AFQjCNEmke_kMc_fwPwYtAj6GeJyhJNzog&ust=1457762308038788-->
+<!--fall2.jpg = http://img06.deviantart.net/3a3e/i/2008/346/b/6/fall_leaves_by_jacktheterrier.jpg-->
+<!--winter2.jpg = https://pixabay.com/static/uploads/photo/2015/11/27/11/36/winter-1065397_960_720.jpg-->
+<!--summer1.jpg = https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwi8z-3m_LfLAhUJeT4KHWi0AHQQjRwIBw&url=https%3A%2F%2Fwww.flickr.com%2Fphotos%2F20401442%40N08%2F15777223905&bvm=bv.116573086,d.cWw&psig=AFQjCNF2_f5IT6H2tr0FHGTBT-vxKwSDQQ&ust=1457763054794131-->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery Template</title>
+  <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+  <script>
+    $(function() {
+  
+      $("input[name=season]").on("click", function() {
+        var season = $(this).val();
+        if (season == "spring") {
+          $("div").css('background-image', "url(spring.jpg)");
+        }
+        else if (season == "summer") {
+          $("div").css('background-image', "url(summer1.jpg)");
+        }
+        else if (season == "fall") {
+          $("div").css('background-image', "url(fall2.jpg)");
+        }
+        else {
+          $("div").css('background-image', "url(winter2.jpg)");
+        }
+      });
+
+      $("input[name=mood]").on("click", function() {
+        var mood = $(this).val();
+        if (mood == "excited") {
+          $("div").css('color', "yellow");
+        }
+        else if (mood == "angry") {
+          $("div").css('color', "red");
+        }
+        else if (mood == "sad") {
+          $("div").css('color', "blue");
+        }
+        else {
+          $("div").css('color', "gray");
+        }
+      });
+
+
+
+      $('button').click(function() {
+       
+       var place = $('#place').val();
+        var story = ("I LOVE " + place);
+         $('h1').html(story);
+  
+    
+
+      });
+   $('#random').click(function() { 
+
+   var border =["dotted","dashed","solid","double","groove","ridge","inset"];
+   var ran = border[Math.floor((Math.random()*8))];
+   
+   $('div').css("border-style",ran);
+   
+     });
+   
+      });
+      
+      
+
+
+    
+  </script>
+  <style>
+  body{
+     background-color:#ffe6cc;
+  }
+    div {
+     background-image: url("images.jpg");
+     
+      color: white;
+      width: 500px;
+      height:300px;
+      padding: 20px;
+      margin: 20px 0;
+      font-size:40px;
+      border-style: none;
+      border-width: 10px;
+      text-align:center;
+      border-color:#009999;
+     
+    }
+    
+    #bannername {
+      font-size:40px;
+    }
+  </style>
+</head>
+
+<body>
+ <h3 id="bannername"> Create Your Own Banner</h3>
+  <h2>Favorite Season</h2>
+  <input type="radio" name="season" value="spring">Spring
+  <input type="radio" name="season" value="summer">Summer
+  <input type="radio" name="season" value="fall">Fall
+  <input type="radio" name="season" value="winter">Winter
+  <h2>What is your mood?</h2>
+
+  <input type="radio" name="mood" value="excited" id="excited"> Excited
+  <input type="radio" name="mood" value="angry">Angry
+  <input type="radio" name="mood" value="sad">Sad
+  <input type="radio" name="mood" value="normal">normal
+  <h2>Favorite City/Country/State?</h2>
+  <input id="place"></input>
+  <br>
+  <br>
+  <button>Submit</button>
+<button id="random">random border</button>
+  <div>
+
+    <h1></h1>
+  </div>
+
+</body>
+
+</html>
