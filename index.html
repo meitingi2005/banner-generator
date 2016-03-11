@@ -12,10 +12,10 @@
   <script>
     $(function() {
   
-      $("input[name=season]").on("click", function() {
-        var season = $(this).val();
-        if (season == "spring") {
-          $("div").css('background-image', "url(spring.jpg)");
+      $("input[name=season]").on("click", function() { //if the unput season is clicked then run the code
+        var season = $(this).val(); //grapping the user choice(this=only applies to the one the user click)
+        if (season == "spring") { 
+          $("div").css('background-image', "url(spring.jpg)"); //change the css of the div depends of the choice user pick
         }
         else if (season == "summer") {
           $("div").css('background-image', "url(summer1.jpg)");
@@ -45,22 +45,22 @@
       });
 
 
-
+// if the button is clicked, then grab the user answer for their favorite place and save it as variable. Set a story which should shows up inside of div.
       $('button').click(function() {
        
        var place = $('#place').val();
         var story = ("I LOVE " + place);
-         $('h1').html(story);
+         $('h1').html(story); // the story would be display in h1
   
     
 
       });
-   $('#random').click(function() { 
+   $('#random').click(function() { // when the random button is clicked
 
-   var border =["dotted","dashed","solid","double","groove","ridge","inset"];
-   var ran = border[Math.floor((Math.random()*8))];
+   var border =["dotted","dashed","solid","double","groove","ridge","inset"]; //this is an array with all the possible variable that the user might have.
+   var ran = border[Math.floor((Math.random()*8))]; // the border will show up randomly base on the number of the array. The math.floor would give us a whole number and *8 is used to set the max number it can have. 
    
-   $('div').css("border-style",ran);
+   $('div').css("border-style",ran); 
    
      });
    
